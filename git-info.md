@@ -5,29 +5,11 @@ git remote add origin https://github.com/DmitriBelski/Excel.git // задаем 
 git push -u origin master // заливаем код в репозиторий, в мастер ветку
 git checkout -b "webpack" // переключаемся на отдельную ветку для работы с вебпаком, -b означает branch
 git add .
-git commit -m "create webpack config" // заливаем изменения (мы создали файл конфига), но не с мастер веткой, а с веткой webpack
+git commit -m "create webpack config" // коммитим изменения (мы создали файл конфига), но не с мастер веткой, а с веткой webpack
+git push -u origin webpack // заливаем код в репозиторий, в вэбпак ветку
 
+<!-- мы закончили писать webpack config -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-…or create a new repository on the command line
-echo "# Excel" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin https://github.com/DmitriBelski/Excel.git
-git push -u origin master
-
-…or push an existing repository from the command line
-git remote add origin https://github.com/DmitriBelski/Excel.git
-git push -u origin master
+git add .
+git commit -m "finish project config"
+git push -u origin webpack
