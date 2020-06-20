@@ -5,9 +5,10 @@ module.exports = {
     "arrow-parens": "off",
     "comma-dangle": "off",
     "require-jsdoc": "off",
-    "linebreak-style": ["error", process.env.NODE_ENV === 'prod' ? "unix" : "windows"],
-    // "linebreak-style": 0
+    // "linebreak-style": ["warn", process.env.NODE_ENV === 'production' ? "unix" : "windows"],
+    "linebreak-style": "off",
     // "linebreak-style": ["error", "windows"]
+    "operator-linebreak": "off",
     // "no-unused-vars": "warn"
     // "no-unused-vars": "error"
   },
