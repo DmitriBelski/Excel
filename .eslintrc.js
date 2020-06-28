@@ -7,10 +7,8 @@ module.exports = {
     "require-jsdoc": "off",
     // "linebreak-style": ["warn", process.env.NODE_ENV === 'production' ? "unix" : "windows"],
     "linebreak-style": "off",
-    // "linebreak-style": ["error", "windows"]
     "operator-linebreak": "off",
-    // "no-unused-vars": "warn"
-    // "no-unused-vars": "error"
+    "max-len": [2, {"code": 120, "tabWidth": 4, "ignoreUrls": true}]
   },
   "env": {
     "es6": true,

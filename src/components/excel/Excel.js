@@ -5,6 +5,7 @@ export class Excel {
     this.$el = $(selector)
     this.components = options.components || []
   }
+
   getRoot() {
     const $root = $.create('div', 'excel')
 
@@ -22,6 +23,7 @@ export class Excel {
 
     return $root
   }
+
   render() {
     this.$el.append(this.getRoot())
     // эмитим обязательно после того как элементы отрендеряться
