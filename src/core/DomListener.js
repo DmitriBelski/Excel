@@ -12,8 +12,8 @@ export class DomListener {
   initDOMListeners() {
     this.listeners.forEach(listener => {
       const method = getMethodName(listener)
-      const name = this.name || ''
       if (!this[method]) {
+        const name = this.name || ''
         throw new Error(`Have no method ${method} in component ${name}`)
       }
       // bind для того, чтобы в инстансе класса, тоесть в this
@@ -31,6 +31,6 @@ export class DomListener {
   }
 }
 
-function getMethodName(string) {
-  return 'on' + capitalize(string)
+function getMethodName(eventName) {
+  return 'on' + capitalize(eventName)
 }

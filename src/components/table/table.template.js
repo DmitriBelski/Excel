@@ -3,24 +3,31 @@ const CODES = {
   Z: 90
 }
 
-function createRow(index, content) {
+function toCell(el, index) {
   return `
-    <div class="row">
-      <div class="row-info">${index ? index : ''}</div>
-      <div class="row-data">${content}</div>
+    <div class="cell" contenteditable data-col="${index+1}">${el}</div>
+  `
+}
+
+function toColumn(col, index) {
+  return `
+    <div class="column" data-type="resizable" data-col="${index+1}">
+      ${col}
+      <div class="col-resize" data-resize="col"></div>
     </div>
   `
 }
 
-function toColumn(el) {
+function createRow(index, content) {
+  const resize = index ? '<div class="row-resize" data-resize="row"></div>' : ''
   return `
-    <div class="column">${el}</div>
-  `
-}
-
-function toCell(el) {
-  return `
-    <div class="cell" contenteditable>${el}</div>
+    <div class="row" data-type="resizable">
+      <div class="row-info">
+        ${index ? index : ''}
+        ${resize}
+      </div>
+      <div class="row-data">${content}</div>
+    </div>
   `
 }
 
