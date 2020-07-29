@@ -8,6 +8,7 @@ export class Formula extends ExcelComponent {
     super($root, {
       name: 'Formula',
       listeners: ['input', 'keydown'],
+      subscribe: ['currentText'],
       ...options
     })
   }
@@ -15,11 +16,18 @@ export class Formula extends ExcelComponent {
     super.init()
     this.$formula = this.$root.find('#formula')
     this.$on('table:select', $cell => {
-      this.$formula.text($cell.text())
+      this.$formula.text($cell.data.value)
     })
-    this.$on('table:input', $cell => {
-      this.$formula.text($cell.text())
-    })
+    // // это не нужно после того, как мы подписались на изменение части state'а
+    // this.$on('table:input', $cell => {
+    //   this.$formula.text($cell.text())
+    // })
+    // this.$subscribe((state) => {
+    //   // проблема в том что подписка происходит на все изменения store,
+    //   // и срабатывает даже когда мы двигаем ширину столбца
+    //   console.log('Formula update', state.currentText)
+    //   this.$formula.text(state.currentText)
+    // })
   }
   toHTML() {
     return `
@@ -27,7 +35,9 @@ export class Formula extends ExcelComponent {
       <div id="formula" class="input" contenteditable spellcheck="false"></div>
     `
   }
-
+  storeChanged({currentText}) {
+    console.log('currentText', currentText)
+  }
   onInput(event) {
     this.$emit('formula:input', $(event.target).text())
   }
