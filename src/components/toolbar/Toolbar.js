@@ -19,15 +19,6 @@ export class Toolbar extends ExcelStateComponents {
     this.initState(defaultStyles)
   }
 
-  // init() {
-  //   super.init()
-  //   this.$on('table:select', $cell => {
-  //     const storeStyle = this.store.getState().cellStyle[$cell.data.id]
-  //     this.prepare()
-  //     this.setState(storeStyle)
-  //   })
-  // }
-
   storeChanged({currentStyles}) {
     this.setState(currentStyles)
   }
