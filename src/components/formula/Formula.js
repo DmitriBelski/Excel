@@ -36,7 +36,7 @@ export class Formula extends ExcelComponent {
     `
   }
   storeChanged({currentText}) {
-    console.log('currentText', currentText)
+    this.$formula.text(currentText)
   }
   onInput(event) {
     this.$emit('formula:input', $(event.target).text())

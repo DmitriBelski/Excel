@@ -47,9 +47,16 @@ export function debounce(fn, wait) {
       clearTimeout(timeout)
       // eslint-disable-next-line
       fn.apply(this, args)
-      // fn(...args)
     }
     clearTimeout(timeout)
     timeout = setTimeout(later, wait)
   }
+}
+
+export function clone(obj) {
+  return JSON.parse(JSON.stringify(obj))
+}
+
+export function preventDefault(event) {
+  event.preventDefault()
 }

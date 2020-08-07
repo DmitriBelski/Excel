@@ -23,7 +23,6 @@ function toCell(row, state) {
     const width = getWidth(state.colState, col)
     const id = `${row}:${col}`
     const data = state.dataState[id]
-    console.log('data', data)
     const styles = toInlineStyles({
       ...defaultStyles,
       ...state.styleState[id]
