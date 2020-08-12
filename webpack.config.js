@@ -11,15 +11,17 @@ const isProd = !isDev
 const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
 
 const jsLoaders = () => {
-  const loaders = [
-    {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env'],
-        plugins: ['@babel/plugin-proposal-class-properties']
-      }
-    }
-  ]
+  // const loaders = [
+  //   {
+  //     loader: 'babel-loader',
+  //     options: {
+  //       presets: ['@babel/preset-env'],
+  //       plugins: ['@babel/plugin-proposal-class-properties']
+  //     }
+  //   }
+  // ]
+  // эти настройки вынесли в babel.config чтобы, jest их видел и можно было бы использовать import from, который по умолчанию jest не видит
+  const loaders = ['babel-loader']
 
   if (isDev) {
     loaders.push('eslint-loader')
