@@ -1,3 +1,3 @@
 # Excel
 Pure JavaScript Excel
-![UML Diagram](images/someimage.png)
+![UML Diagram](UML%20diagram.svg)
